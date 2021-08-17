@@ -9,7 +9,7 @@ import json
 from discord.ext import commands
 
 # Init the bot, prefix and help description.
-bot = commands.Bot(command_prefix='>', description='Commands currently available')
+bot = commands.Bot(command_prefix='!', description='Commands currently available')
 
 
 @bot.event
@@ -28,7 +28,7 @@ if __name__ == '__main__':
             print(f'Failed to load module {module}\n{exc}')
 
 # Opens the json file and fetches the token
-with open('diepy.json') as f:
+with open('risobot.json') as f:
     diepy = json.load(f)
     token = diepy.get('token')
 bot.run(token)
