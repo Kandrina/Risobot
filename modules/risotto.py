@@ -15,7 +15,7 @@ class Risotto(commands.Cog):
 
         with open('json/risotto.json') as f:
             data = json.load(f)
-        print(data)
+        #print(data)
         quotes = data["quotes"]
         images = data["images"]
 
