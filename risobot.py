@@ -16,6 +16,7 @@ bot = commands.Bot(command_prefix='!', description='Commands currently available
 async def on_ready():
     # Prints the bot name, discrim and ID when started up
     print(f'------\nReady!\n{bot.user}\n{bot.user.id}\n------')
+    print('METALLICA!')
 
 # Searches for existing modules (commands) in /modules/
 if __name__ == '__main__':
