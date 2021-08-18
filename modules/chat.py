@@ -13,18 +13,18 @@ class Chat(commands.Cog):
     @commands.command()
     async def chat(self, ctx, first, second):
         firstfile = 'json/'+first+'.json'
-        print(firstfile)
         with open(firstfile) as ff:
             firstdata = json.load(ff)
+
         firstquotes = firstdata["quotes"]
         firstname = firstdata["name"]
         firstcolor = int(firstdata["color"],16)
         firstimage = firstdata["image"]
 
         secondfile = 'json/'+second+'.json'
-        print(secondfile)
         with open(secondfile) as sf:
             seconddata = json.load(sf)
+            
         secondquotes = seconddata["quotes"]
         secondname = seconddata["name"]
         secondcolor = int(seconddata["color"],16)
