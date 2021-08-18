@@ -10,7 +10,7 @@ class Roll(commands.Cog):
     @commands.group()
     async def roll(self, ctx):
         if ctx.invoked_subcommand is None:
-            await ctx.send('Please enter a valid dice to roll.\nValid dices:\nd6, d12, d20')
+            await ctx.send('Please enter a valid dice to roll.\nValid dices:\nd6, d12, d20, d100')
 
     @roll.command()
     async def d6(self, ctx):
