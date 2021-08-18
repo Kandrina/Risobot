@@ -18,7 +18,7 @@ class Chat(commands.Cog):
             firstdata = json.load(ff)
         firstquotes = firstdata["quotes"]
         firstname = firstdata["name"]
-        firstcolor = firstdata["color"]
+        firstcolor = int(firstdata["color"],16)
         firstimage = firstdata["image"]
 
         secondfile = 'json/'+second+'.json'
@@ -27,7 +27,7 @@ class Chat(commands.Cog):
             seconddata = json.load(sf)
         secondquotes = seconddata["quotes"]
         secondname = seconddata["name"]
-        secondcolor = seconddata["color"]
+        secondcolor = int(seconddata["color"],16)
         secondimage = seconddata["image"]
 
         # Counts the maps to be used in a randint
