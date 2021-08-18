@@ -17,15 +17,13 @@ class Cioccolata(commands.Cog):
             data = json.load(f)
         #print(data)
         quotes = data["quotes"]
-        images = data["images"]
 
         # Counts the maps to be used in a randint
         quotes_count = len(quotes) - 1
-        images_count = len(images) - 1
 
         embedVar = discord.Embed(title="", description="", color=0x00C80D)
         embedVar.add_field(name="Cioccolata", value=quotes[random.randint(0, quotes_count)], inline=False)
-        embedVar.set_thumbnail(url=images[random.randint(0, images_count)])
+        embedVar.set_thumbnail(url="https://banner2.cleanpng.com/20180616/hxa/kisspng-traffic-sign-roadworks-warning-sign-denmark-5b2569ae9b5ec0.3560216115291785426364.jpg")
         await ctx.send(embed=embedVar)
 
 def setup(bot):

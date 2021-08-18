@@ -15,17 +15,14 @@ class Shuu(commands.Cog):
 
         with open('json/shuu.json') as f:
             data = json.load(f)
-        #print(data)
         quotes = data["quotes"]
-        images = data["images"]
 
         # Counts the maps to be used in a randint
         quotes_count = len(quotes) - 1
-        images_count = len(images) - 1
 
         embedVar = discord.Embed(title="", description="", color=0x9303A7)
         embedVar.add_field(name="Shuu Tsukiyama", value=quotes[random.randint(0, quotes_count)], inline=False)
-        embedVar.set_thumbnail(url=images[random.randint(0, images_count)])
+        embedVar.set_thumbnail(url="https://cdn.anisearch.de/images/character/cover/full/45/45986.webp")
         await ctx.send(embed=embedVar)
 
 def setup(bot):
