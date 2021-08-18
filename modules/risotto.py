@@ -17,13 +17,16 @@ class Risotto(commands.Cog):
             data = json.load(f)
         #print(data)
         quotes = data["quotes"]
+        name = data["name"]
+        image = data["image"]
+        color = int(data["color"],16)
 
         # Counts the maps to be used in a randint
         quotes_count = len(quotes) - 1
 
-        embedVar = discord.Embed(title="", description="", color=0x000000)
-        embedVar.add_field(name="Risotto Nero", value=quotes[random.randint(0, quotes_count)], inline=False)
-        embedVar.set_thumbnail(url="https://static.wikia.nocookie.net/jjba/images/b/b4/Nero_Anime.png/revision/latest?cb=20191017175944")
+        embedVar = discord.Embed(title="", description="", color=color)
+        embedVar.add_field(name=name, value=quotes[random.randint(0, quotes_count)], inline=False)
+        embedVar.set_thumbnail(url=image)
         await ctx.send(embed=embedVar)
 
 def setup(bot):
