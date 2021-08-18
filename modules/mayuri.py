@@ -23,7 +23,7 @@ class Mayuri(commands.Cog):
         quotes_count = len(quotes) - 1
         images_count = len(images) - 1
 
-        embedVar = discord.Embed(title="", description="", color=0xff0000)
+        embedVar = discord.Embed(title="", description="", color=0x000000)
         embedVar.add_field(name="Mayuri", value=quotes[random.randint(0, quotes_count)], inline=False)
         embedVar.set_thumbnail(url=images[random.randint(0, images_count)])
         await ctx.send(embed=embedVar)
