@@ -18,6 +18,8 @@ class Chat(commands.Cog):
             firstdata = json.load(ff)
         firstquotes = firstdata["quotes"]
         firstname = firstdata["name"]
+        firstcolor = firstdata["color"]
+        firstimage = firstdata["image"]
 
         secondfile = 'json/'+second+'.json'
         print(secondfile)
@@ -25,18 +27,20 @@ class Chat(commands.Cog):
             seconddata = json.load(sf)
         secondquotes = seconddata["quotes"]
         secondname = seconddata["name"]
+        secondcolor = seconddata["color"]
+        secondimage = seconddata["image"]
 
         # Counts the maps to be used in a randint
         firstquotes_count = len(firstquotes) - 1
         secondquotes_count = len(secondquotes) - 1
 
-        firstembedVar = discord.Embed(title="", description="", color=0x000000)
+        firstembedVar = discord.Embed(title="", description="", color=firstcolor)
         firstembedVar.add_field(name=firstname, value=firstquotes[random.randint(0, firstquotes_count)], inline=False)
-        firstembedVar.set_thumbnail(url="https://static.wikia.nocookie.net/jjba/images/b/b4/Nero_Anime.png/revision/latest?cb=20191017175944")
+        firstembedVar.set_thumbnail(url=firstimage)
         
-        secondembedVar = discord.Embed(title="", description="", color=0x000000)
+        secondembedVar = discord.Embed(title="", description="", color=secondcolor)
         secondembedVar.add_field(name=secondname, value=secondquotes[random.randint(0, secondquotes_count)], inline=False)
-        secondembedVar.set_thumbnail(url="https://static.wikia.nocookie.net/jjba/images/b/b4/Nero_Anime.png/revision/latest?cb=20191017175944")
+        secondembedVar.set_thumbnail(url=secondimage)
         
         await ctx.send(embed=firstembedVar)
         await ctx.send(embed=secondembedVar)
