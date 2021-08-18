@@ -23,7 +23,7 @@ class Risotto(commands.Cog):
 
         embedVar = discord.Embed(title="", description="", color=0x000000)
         embedVar.add_field(name="Risotto Nero", value=quotes[random.randint(0, quotes_count)], inline=False)
-        embedVar.set_thumbnail("https://static.wikia.nocookie.net/jjba/images/b/b4/Nero_Anime.png/revision/latest?cb=20191017175944")
+        embedVar.set_thumbnail(url="https://static.wikia.nocookie.net/jjba/images/b/b4/Nero_Anime.png/revision/latest?cb=20191017175944")
         await ctx.send(embed=embedVar)
 
 def setup(bot):
