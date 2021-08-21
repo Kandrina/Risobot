@@ -14,9 +14,9 @@ class Husbando(commands.Cog):
     @commands.command()
     async def husbando(self, ctx):
         for image in glob.glob('../images/'):
-            print(image)
+            print('Image: ' +image)
 
-        await ctx.send(file=discord.File('image'))
+        await ctx.send(file=discord.File(image))
 
 def setup(bot):
     bot.add_cog(Husbando(bot))
