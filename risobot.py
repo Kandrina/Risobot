@@ -19,13 +19,13 @@ async def on_ready():
     print(f'------\nReady!\n{bot.user}\n{bot.user.id}\n------')
 
  
-#@bot.event
-#async def on_message(message):
-    #if message.author == bot.user:
-        #return
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
 
-    #if message.content.lower() == "risotto":
-        #await message.channel.send("Issy")
+    if message.content.startswith("riso"):
+        await message.channel.send("Issy")
 
 # Searches for existing modules (commands) in /modules/
 if __name__ == '__main__':
