@@ -34,7 +34,7 @@ async def on_message(message):
         return
 
     # Looks for the substring "bidoof" in a message.
-    if "risotto" in message.content.lower():
+    if "risotto"==message.content.lower():
         await message.channel.send("Issy")
 
 # Opens the json file and fetches the token
