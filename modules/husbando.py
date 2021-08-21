@@ -14,7 +14,7 @@ class Husbando(commands.Cog):
     @commands.command()
     async def husbando(self, ctx):
         img_list = os.listdir('./images/')
-        print(img_list())
+        #print(img_list())
 
         # Counts the maps to be used in a randint
         image_count = len(img_list) - 1
