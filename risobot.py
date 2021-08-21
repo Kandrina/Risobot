@@ -18,6 +18,14 @@ async def on_ready():
     print('METALLICA!')
     print(f'------\nReady!\n{bot.user}\n{bot.user.id}\n------')
     
+bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    # Looks for the substring "bidoof" in a message.
+    if "risotto" in message.content.lower():
+        await message.channel.send("Issy")
 
 # Searches for existing modules (commands) in /modules/
 if __name__ == '__main__':
