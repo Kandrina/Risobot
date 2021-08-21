@@ -13,7 +13,7 @@ class Husbando(commands.Cog):
 
     @commands.command()
     async def husbando(self, ctx):
-        for image in glob.glob('./images/'):
+        for image in glob.glob('./images/*.*'):
             print('Image: ' +image)
 
         await ctx.send(file=discord.File(image))
