@@ -19,7 +19,7 @@ class Husbando(commands.Cog):
         # Counts the maps to be used in a randint
         image_count = len(img_list) - 1
 
-        await ctx.send(file=discord.File(img_list[random.randint(0, image_count)]))
+        await ctx.send(file=discord.File('./images/'+img_list[random.randint(0, image_count)]))
 
 def setup(bot):
     bot.add_cog(Husbando(bot))
