@@ -17,7 +17,16 @@ async def on_ready():
     # Prints the bot name, discrim and ID when started up
     print('METALLICA!')
     print(f'------\nReady!\n{bot.user}\n{bot.user.id}\n------')
-    
+
+ 
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    if "risotto"==message.content.lower():
+        await message.channel.send("Issy")
+
 # Searches for existing modules (commands) in /modules/
 if __name__ == '__main__':
     for module in glob.glob('./modules/*.py'):
@@ -28,14 +37,6 @@ if __name__ == '__main__':
             exc = f'{__name__}: {e}'
             print(f'Failed to load module {module}\n{exc}')
 
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-
-    # Looks for the substring "bidoof" in a message.
-    if "risotto"==message.content.lower():
-        await message.channel.send("Issy")
 
 # Opens the json file and fetches the token
 with open('risobot.json') as f:
