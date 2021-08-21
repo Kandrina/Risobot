@@ -32,6 +32,7 @@ if __name__ == '__main__':
     for module in glob.glob('./modules/*.py'):
         print(module)
         try:
+            print("i'm trying ok")
             bot.load_extension(f'modules.{os.path.basename(module)[:-3]}')
         except Exception as e:
             exc = f'{__name__}: {e}'
