@@ -24,7 +24,7 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
-    if message.content.lower() is "risotto":
+    if message.content.lower() == "risotto":
         await message.channel.send("Issy")
 
 # Searches for existing modules (commands) in /modules/
