@@ -18,7 +18,7 @@ async def on_ready():
     print('METALLICA!')
     print(f'------\nReady!\n{bot.user}\n{bot.user.id}\n------')
     
-bot.event
+@bot.event
 async def on_message(message):
     if message.author == bot.user:
         return
